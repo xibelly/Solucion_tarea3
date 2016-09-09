@@ -1,11 +1,15 @@
 CC = gcc
 
-CFLAGS = -c -O0 -I/home/$(USER)/local/include/ -I/usr/include/  
+CFLAGS = -c -O0 -I/home/$(USER)/local/include/ -I/usr/include/
 
 CFLAGSDEBUG = -g -Wall -c -I/home/$(USER)/local/include/ -I/usr/include/
 
 LFLAGS = -lm -L/home/$(USER)/local/lib -Wl,-R /home/$(USER)/local/lib 
 
+OBJECTS = $(patsubst %.c, %.o, $(wildcard include/*.c))
+
+%.out: %.o $(OBJECTS)
+	$(CC) $^ $(LFLAGS) -o $@
 
 seno:
 	echo Estoy compilando $@.c
