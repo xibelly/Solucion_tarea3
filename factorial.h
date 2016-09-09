@@ -1,1 +1,1 @@
-int factorial(int n);
+double factorial(double n);

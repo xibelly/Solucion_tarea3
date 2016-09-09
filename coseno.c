@@ -7,15 +7,15 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
-#include"factorial.h"
+#include"factorial.c"
 
 #define pi 3.141592
 
 
 int main(int argc, char **argv){
 
-  int N,i,term,denominador;
-  double angulo,numerador, suma,coseno_x, radianes;
+  int N,i;
+  double angulo, term, numerador, denominador, suma,coseno_x, radianes;
   
   angulo   = atof(argv[1]);
   radianes = angulo*pi/180.0;
@@ -25,7 +25,7 @@ int main(int argc, char **argv){
   
   for(i=0; i<N; i++)
     {
-      term         = (2*i) ;
+      term         = (2.0*i) ;
       
       numerador    = pow(-1,i) * pow(radianes,term);
 

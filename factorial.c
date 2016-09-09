@@ -1,10 +1,11 @@
-int factorial(int n)
-{
-  int i;
-  int p;
+#include"factorial.h"
 
-  p = 1;
-  for(i=1; i<=n; i ++)
+double factorial(double n)
+{
+  double i, p;
+
+  p = 1.0;
+  for(i=1.0; i<=n; i ++)
     {
       p = p*i;
     }
