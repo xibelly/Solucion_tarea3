@@ -26,6 +26,11 @@ division_entera:
 	$(CC) $(CFLAGS) $@.c -o $@.o
 	$(CC) $@.o $(LFLAGS) -lgsl -lgslcblas -lfftw3 -lm -o  $@.x
 
+calculadora:
+	echo Estoy compilando $@.c
+	$(CC) $(CFLAGS) $@.c -o $@.o
+	$(CC) $@.o $(LFLAGS) -lgsl -lgslcblas -lfftw3 -lm -o  $@.x
+
 
 
 debug: 
