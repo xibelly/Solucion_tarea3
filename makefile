@@ -31,6 +31,11 @@ calculadora:
 	$(CC) $(CFLAGS) $@.c -o $@.o
 	$(CC) $@.o $(LFLAGS) -lgsl -lgslcblas -lfftw3 -lm -o  $@.x
 
+punto6:
+	echo Estoy compilando $@.c
+	$(CC) $(CFLAGS) $@.c -o $@.o
+	$(CC) $@.o $(LFLAGS) -lgsl -lgslcblas -lfftw3 -lm -o  $@.x
+
 
 
 debug: 
