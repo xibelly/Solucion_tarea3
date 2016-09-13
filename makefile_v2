@@ -1,0 +1,30 @@
+CC=gcc
+#opciones de ejecucion
+CFLAGS=-c -O0
+#librerias 
+LDFLAGS=-lm
+SOURCES= division_entera.c calculadora.c punto6.c punto7.c  
+OBJECTS=$(SOURCES:%.c=%.o)
+
+all1: factorial.c
+
+all2: division_entera.c calculadora.c punto6.c punto7.c
+
+# seno.c coseno.c factorial_de_x.c
+
+#el $@ reemplaza el target que en este caso es hello
+all1:	  
+	$(CC) $(LDFLAGS) -o $@.o
+
+all2:
+	echo Estoy compilando $(SOURCES)
+	$(CC) $(CFLAGS) $(SOURCES) -o $(OBJECTS)
+	$(CC) $(OBJECTS) $(LDFLAGS) -o $@.x
+
+
+%.o: %.c
+	$(CC) $(CFLAGS) $<
+
+clean:
+	rm -rf *.o *.x *~
+
