@@ -1,7 +1,7 @@
 
 CC=gcc
 #opciones de ejecucion
-CFLAGS=-c -Wall
+CFLAGS=-c -O1
 #librerias 
 LDFLAGS=-lm
 SOURCES=factorial.c seno.c coseno.c division_entera.c factorial_de_x.c calculadora.c punto6.c punto7.c  
@@ -18,6 +18,6 @@ all:
 	$(CC) $(CFLAGS) $<
 
 clean:
-	rm *.o *.x *~
+	rm -rf *.o *.x *~
 
 
