@@ -14,6 +14,33 @@ a) Cual es la implementación correcta?
 b) En cada caso, en que se diferencia cada implementación de la formula correcta?
 c) Que aprendió sobre la precedencia de los operadores en este ejemplo?
  */
+ 
+/*
+ Analisis y diseño
+ 
+ Para resolver nuestro problema necesitamos
+ 
+ -entregar los temrinos a y b y el angulo, lo haremos por linea de comandos
+ 
+ -pasar el angulo a radianes
+ 
+ -definir para cada caso una funcion
+ 
+ -imprimir en pantalla los resultados y analizar las salidas
+ 
+
+ */
+
+/*
+ Respuestas:
+ 
+ a) Cual es la implementación correcta?
+ 
+ La implementacion correcta es la ultima
+
+.......continuar
+*/
+
 
 #include<stdio.h>
 #include<stdlib.h>
