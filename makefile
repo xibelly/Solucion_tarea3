@@ -1,20 +1,18 @@
 
-#comentarios
 CC=gcc
 #opciones de ejecucion
 CFLAGS=-c -Wall
-#para que linkee las librerias (en algunas es necesario en otras no)
+#librerias 
 LDFLAGS=-lm
-SOURCES=factorial.c hello.c main.c 
+SOURCES=factorial.c seno.c coseno.c division_entera.c factorial_de_x.c calculadora.c punto6.c punto7.c  
 OBJECTS=$(SOURCES:%.c=%.o)
 
-all: hello
+all: seno coseno factorial factorial_de_x division_entera calculadora punto6 punto7
 
 #el $@ reemplaza el target que en este caso es hello
-hello: $(OBJECTS) 
+all: 
+	$(OBJECTS) 
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@.x
-
-#este % coge las dependencias de hello que debe buscar con .o y las remmplaza por el string, entonces tomaria factorial luego main luego hello y coge el % lo remplaza por la primera que lee (factorial), luego la segunda (main), etc. $< le dice que lo debe remmplzar el % por la palabra. 
 
 %.o: %.c
 	$(CC) $(CFLAGS) $<
@@ -23,5 +21,3 @@ clean:
 	rm *.o *.x *~
 
 
-echo:
-	echo "Hello"
