@@ -6,8 +6,6 @@
 
 */
 
-#include"factorial.h"
-
 double factorial(double n)
 {
   double i, p;
