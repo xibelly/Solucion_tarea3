@@ -3,7 +3,7 @@ CC=gcc
 CFLAGS=-c -O1
 #librerias 
 LDFLAGS=-lm
-SOURCES=factorial.c seno.c coseno.c division_entera.c factorial_de_x.c calculadora.c punto6.c punto7.c  
+SOURCES=seno.c coseno.c division_entera.c factorial_de_x.c calculadora.c punto6.c punto7.c  
 OBJECTS=$(SOURCES:%.c=%.o)
 
 
