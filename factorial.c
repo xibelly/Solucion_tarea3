@@ -1,3 +1,11 @@
+/*
+  Xibelly Eliseth Mosquera Escobar
+  
+  Este programa consiste en diseñar la funcion factorial de un numero n cualquiera.
+  
+
+*/
+
 #include"factorial.h"
 
 double factorial(double n)
