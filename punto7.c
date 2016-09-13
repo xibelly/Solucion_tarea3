@@ -59,7 +59,7 @@ f1(double x, double a, double b)
   
   result = sin(x) + cos(x) * 0.5 *a + b;
 
-   printf("f1 = %lf\n",result);
+  printf("f1 = %lf\n",result);
 
 }
 
