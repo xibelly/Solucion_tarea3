@@ -4,11 +4,30 @@
 
  */
 
+/*
+ Analisis y diseño
+ 
+ Para calcular cada operacion necesitamos
+ 
+ -entrehgar los terminos de la operacion y la operacion, ejm: 1 suma 2. esto se hara por linea de comandos
+ 
+ -estableces una condiccion que lea que operacion va a hacerse y ejecute dicha operacion
+ 
+ -crear funciones para cada operacion, tal que en el punto anterior se llame a la funcion que corresponda
+ 
+ -imprimir en pantalla los resultados correpondientes a la operacion indicada
+  
+  
+
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #include<math.h>
 
+
+/////////////////////////FUNCIONES ///////////////////////////////
 suma(double x, double y)
 {
   double result;
@@ -46,9 +65,10 @@ division(double x, double y)
 
   printf("%lf / %lf = %lf\n",x, y, result);
 }
+////////////////////////////////////////////////////////////
 
 
-
+/////////////////////////////////////////PROGRAMA PRINCIPAL//////////////////////
 int main(int argc, char **argv){
 
   double term1, term2;
