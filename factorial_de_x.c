@@ -23,7 +23,7 @@ Xibelly Eliseth Mosquera Escobar
 
 #include<stdio.h>
 #include<stdlib.h>
-#include"factorial.c"
+#include"factorial.h"
 
 
 int main(int argc, char **argv)
