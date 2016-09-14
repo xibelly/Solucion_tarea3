@@ -40,6 +40,10 @@ punto7:
 	$(CC) $(CFLAGS) $@.c -o $@.o
 	$(CC) $@.o $(LFLAGS) -lgsl -lgslcblas -lfftw3 -lm -o  $@.x
 
+punto8:
+	echo Estoy compilando $@.c
+	$(CC) $(CFLAGS) $@.c -o $@.o
+	$(CC) $@.o $(LFLAGS) -lgsl -lgslcblas -lfftw3 -lm -o  $@.x
 
 
 debug: 
