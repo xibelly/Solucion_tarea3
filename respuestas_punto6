@@ -1,0 +1,33 @@
+Xibelly Eliseth Mosquera Escobar 
+
+Respuestas punto6:
+ 
+a) Cual es la implementación correcta?
+ 
+La implementacion correcta es la ultima
+
+b) En cada caso, en que se diferencia cada implementación de la formula correcta?
+
+La principal diferencia en cada caso es el uso de los parentesis, de tal modo que cada funcion presenta un calculo diferente, veamos:
+
+1) En f1 : sin(x) + cos(x)/2 * a + b
+
+tenemos que la operacion mas interna es cos(x)/2 * a, en donde, primero se calcula el cos(x) luego se divide por 2 y el resultado se multiplica por el valor de a. Despues de dicha operacion se calcula el seno(x), este tanto como el valor de b se suman al resultado anterior.
+
+2) En f2 : sin(x) + cos(x)/2 * (a + b)
+
+aqui el uso de los parentesis nos indica una nueva operacion, esto es, el resultado de la suma de las variables a y b es multiplicado al resultado que se obtiene de dividir el cos(x) por 2, de tal modo que el resultado final, es tomar la anterior respuesta y sumarla con el seno(x).
+
+3) En f3 : (sin(x) + cos(x)/2) * a + b
+
+similar al caso anterior el uso de los parentesis establece una nueva operacion, en este caso primero se calcula el seno(x) y este se suma al cos(x)/2, de tal manera que el resultado de dicha suma es multiplicado por el valor de la variable a y posteriormente, el resultado obtenido es sumado con el valor de b.
+
+
+4) En f4 : ((sin(x) + cos(x))/2) * (a + b)
+
+en esta ultima version tenemos que el uso de los parentesis establece tres nuevas operaciones, estas son las siguientes: primero calcular la suma mas interna, esto es, la suma del sen(x) y del cos(x), luego dividir el resultado por 2, y finalmente multiplicar este ultimo paso por la suma de las variables a y b.
+
+Al analizar cada caso podemos establecer que la operacion que corresponde efectivamente a la operacion matematica que se desea realizar es la ultima, debido al uso correcto de los parentesis.
+
+d)Que aprendió sobre la precedencia de los operadores en este ejemplo?
+
