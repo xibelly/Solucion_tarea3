@@ -14,13 +14,13 @@ de p y debe imprimir en pantalla los dos valores de p obtenidos.
 /*
   Analisis y diseño
 
- Para resolver el problema de calcular el valor de la masa de la particula para diferentes valores de la velocidad, necesitamos:
+ Para resolver el problema de calcular el valor de pi a partir de las dos aproximacioned, necesitamos:
 
--recivir el numero de terminos de la expansion, se pasara por linea de comandos
+-recivir el numero de terminos en la expansio, esto se hara por linea de comandos
 
 -implementar cada aproximacion en una funcion distinta
 
--imprimir en pantalla los valores de p
+-imprimir en pantalla los valores de pi en cada caso
 
  */
 
