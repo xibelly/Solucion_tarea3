@@ -57,8 +57,8 @@ masa(double incremento, int N)
 ///////////////////////////////Programa principal////////////////////
 int main(int argc, char **argv){
 
-  double dv;
-  int N;
+  double dv;    //300000
+  int N;        //15
   
   dv = atof(argv[1]);
 

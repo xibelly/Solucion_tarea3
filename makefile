@@ -10,7 +10,7 @@ LFLAGS = -lm -L/home/$(USER)/local/lib -Wl,-R /home/$(USER)/local/lib
 factorial:
 	echo Estoy compilando $@.c
 	$(CC) $(CFLAGS) $@.c -o $@.o
-	
+
 seno:
 	echo Estoy compilando $@.c
 	$(CC) $(CFLAGS) $@.c -o $@.o
@@ -48,6 +48,12 @@ punto8:
 	echo Estoy compilando $@.c
 	$(CC) $(CFLAGS) $@.c -o $@.o
 	$(CC) $@.o $(LFLAGS)  -lm -o  $@.x
+
+punto9:
+	echo Estoy compilando $@.c
+	$(CC) $(CFLAGS) $@.c -o $@.o
+	$(CC) $@.o $(LFLAGS)  -lm -o  $@.x
+
 
 
 debug: 
