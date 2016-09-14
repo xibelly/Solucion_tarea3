@@ -1,12 +1,12 @@
 /* Xibelly Eliseth Mosquera Escobar
 
- 10) Escriba un programa que calcule el numero p usando dos aproximaciones diferentes
+ 10) Escriba un programa que calcule el numero pi usando dos aproximaciones diferentes
 
 pi1 ­> 2/π = (√2) / 2 . (√(2+ √2) )/2 . √(2+ (√(2 + √2)))/2 ...
 
 pi2 ­> π/4 =1 −1/3  + 1/5  − 1/7  + 1/9 − 1/11 + ...
  
-Calcule p en cada aproximación implementándola en una función distinta en cada caso (en el mismo
+Calcule pi en cada aproximación implementándola en una función distinta en cada caso (en el mismo
 programa). El programa debe recibir el numero de términos en las expansiones a usarse para el calculo
 de p y debe imprimir en pantalla los dos valores de p obtenidos.
  */
