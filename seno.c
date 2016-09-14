@@ -28,7 +28,7 @@ Necesitamos:
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
-#include"factorial.c"
+#include"factorial.h"
 
 #define pi 3.141592
 
