@@ -13,6 +13,26 @@ El programa debe tener una función en la que se evalúa la masa de la partícul
 Grafique sus resultados usando gnuplot. 
  */
 
+/*
+  Analisis y diseño
+
+ Para resolver el problema de calcular el valor de la masa de la particula para diferentes valores de la velocidad, necesitamos:
+
+-recivir el valor del incremento de la velocidad -dv- y la condicion de parada -N-, esto se hara por linea de comandos
+
+-definir en una funcion la ecuacion (*) y calcular de manera iterativa para cada valor de dv, esto se hara dentro de un loop, que llega hasta el valor N dado.
+
+-definir las variables m_{0} y c, como variables globales
+
+-imprimir en disco los datos: v, v/c y m
+
+-graficar los resultados
+
+
+ */
+
+
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
