@@ -60,6 +60,11 @@ pi:
 	$(CC) $(CFLAGS) $@.c -o $@.o
 	$(CC) $@.o $(LFLAGS)  -lm -o  $@.x
 
+optimizacion_registros:
+	echo Estoy compilando $@.c
+	$(CC) $(CFLAGS) $@.c -o $@.o
+	$(CC) $@.o $(LFLAGS)  -lm -o  $@.x
+
 
 
 debug: 
