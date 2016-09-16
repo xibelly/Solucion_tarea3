@@ -27,8 +27,9 @@ Para resolver nuestro problema necesitamos:
 
 -hacer uso de la funcion clock() para calcular el tiempo de ejecucion
 
--imprimir el tiempo de ejecucion y el # de iteraciones
+-imprimir en disco el tiempo de ejecucion y el # de iteraciones
 
+-realizar grafica de tiempo vs iteraciones para concluir cuando se vuelve importante la optimizacion
 */
 
 #include<stdio.h>
@@ -38,30 +39,63 @@ Para resolver nuestro problema necesitamos:
 
 #define pi 3.141592
 
-modo1(double alpha, int Ntot, double x, double y)
+funcion1(double alpha, int Ntot, double x, double y)
 {
   double t1, t2, tini, tend, tacum;
   int i,j;
+
+  FILE *pf = NULL;
+
+  pf = fopen("iteraciones_modo1.dat","w");
   
-  for(j=0; j<10; j++)
+  for(j=0; j<Ntot; j++)
     {
       tini = clock();
       for(i=0; i<Ntot; i++)
 	{
 	  t1 = sin(alpha)*x + cos(alpha)*y;
 	  t2 = -cos(alpha)*x + sin(alpha)*y;  
+	  
 	}
       tend = clock();
-
-      printf("%16.8lf %16.8lf %16.8lf\n",t1 ,t2 , tend-tini);
-      tacum += tend-tini;
+      tacum += (tend-tini)/Ntot;
+      
+      fprintf(pf,"%d %16.8lf\n", j, tacum);
+   
     }
+     
+  fclose(pf);
   
-  
-  printf("%16.8e %16.8lf %16.8lf\n", t1, t2, tacum/10.0);
-
 }  
 
+funcion2(double alpha, int Ntot, double x, double y)
+{
+  double t1, t2, s, c, tini, tend, tacum;
+  int i,j;
+
+  FILE *pf = NULL;
+
+  pf = fopen("iteraciones_modo2.dat","w");
+
+  s  = sin(alpha);
+  c  = cos(alpha);
+
+  for(j=0; j<Ntot; j++)
+    {
+      tini = clock();
+      for(i=0; i<Ntot; i++)
+	{
+	  t1 = s*x + c*y;
+	  t2 = -c*x + s*y;  
+	  
+	}
+      tend = clock();
+      tacum += (tend-tini)/Ntot;
+      
+      fprintf(pf,"%d %16.8lf\n", j, tacum);
+    }
+  fclose(pf);
+}  
 
 
 int main(int argc, char **argv){
@@ -74,8 +108,8 @@ int main(int argc, char **argv){
   if(argc != 5)
     {
       printf("ERROR--> use as:\n");
-      printf("%s angulo #iteraciones\n",argv[0]);
-      exit(0);  //termina elegante mente la ejecuacion del programa
+      printf("%s angulo #iteraciones x y\n",argv[0]);
+      exit(0);  
     }
   
   angulo   = atof(argv[1]);
@@ -86,10 +120,9 @@ int main(int argc, char **argv){
   
   printf("%lf %d %lf %lf\n", angulo, N, x, y);
   
-  modo1(angulo, N, x, y);
-  
-    
-  //printf("sen( %lf grados) = %f\n",angulo,suma);
+  funcion1(radianes, N, x, y);
+
+  funcion2(radianes, N, x, y);
   
   return 0;
   
