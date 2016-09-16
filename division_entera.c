@@ -33,6 +33,13 @@ int main(int argc, char **argv){
   int suma;
 
   double numero, x, y, z;
+  
+  if(argc != 2)
+    {
+      printf("ERROR--> use as:\n");
+      printf("%s numero\n",argv[0]);
+      exit(0);  
+    }
 
   numero   = atof(argv[1]);
    
