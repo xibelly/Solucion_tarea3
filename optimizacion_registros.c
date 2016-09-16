@@ -1,5 +1,4 @@
 /* Xibelly Eliseth Mosquera Escobar
-
  11) Se menciono en clase que hacer un buen uso de los registros puede ser conveniente para efectos de 
 optimizar el usos del tiempo de computo.
 Escriba un programa que a través de una secuencia de iteraciones muestre que en efecto hacer la optimización 
@@ -13,22 +12,15 @@ t2 = ­c * x + s * y
 conduce a una ganancia de tiempo de cpu.
 Haga una gráfica de tiempo de ejecución como función del numero de iteraciones y úsela para concluir 
 para cuantas iteraciones se vuelve importante considerar la optimización mencionada
-
  */
 
 /*
 Analisis y diseño
-
 Para resolver nuestro problema necesitamos:
-
 -recivir el # en grados y pasarlo a radianes, para ello lo resiviremos por linea de comandos
-
 -pasar el numero de iteraciones (N), de nuevo se hara por linea de comandos
-
 -hacer uso de la funcion clock() para calcular el tiempo de ejecucion
-
 -imprimir en disco el tiempo de ejecucion y el # de iteraciones
-
 -realizar grafica de tiempo vs iteraciones para concluir cuando se vuelve importante la optimizacion
 */
 
@@ -50,25 +42,28 @@ funcion1(double alpha, int Ntot, double x, double y)
   
   FILE *pf = NULL;
 
-  pf = fopen("iteraciones_modo1.dat","w");
-  
-  for(j=0; j<Ntot; j++)
+  pf = fopen("iteraciones_modo1.dat","a");
+
+  for(j=10; j<=Ntot; j*=10)
     {
       tini = clock();
-      for(i=0; i<Ntot; i++)
+      
+      for(i=0; i<j; i++)
 	{
 	  t1 = sin(alpha)*x + cos(alpha)*y;
 	  t2 = -cos(alpha)*x + sin(alpha)*y;  
 	  
 	}
       tend = clock();
-      //tacum += (tend-tini)/Ntot;
+      
       cpu_time_used = ((double) (tend - tini)) / CLOCKS_PER_SEC;
       
       fprintf(pf,"%d %16.8lf\n", j, cpu_time_used);
-   
+      
+      
     }
-     
+
+    
   fclose(pf);
   
 }  
@@ -82,24 +77,28 @@ funcion2(double alpha, int Ntot, double x, double y)
 
   FILE *pf = NULL;
 
-  pf = fopen("iteraciones_modo2.dat","w");
+  pf = fopen("iteraciones_modo2.dat","a");
 
   s  = sin(alpha);
   c  = cos(alpha);
 
-  for(j=0; j<Ntot; j++)
+  for(j=10; j<=Ntot; j*=10)
     {
+      
       tini = clock();
-      for(i=0; i<Ntot; i++)
+      
+      for(i=0; i<j; i++)
 	{
 	  t1 = s*x + c*y;
 	  t2 = -c*x + s*y;  
-	  
+      
 	}
       tend = clock();
-      //tacum += (tend-tini)/Ntot;
+      
       cpu_time_used = ((double) (tend - tini)) / CLOCKS_PER_SEC;
       fprintf(pf,"%d %16.8lf\n", j, cpu_time_used);
+      
+      
     }
   fclose(pf);
 }  
