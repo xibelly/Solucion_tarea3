@@ -1,0 +1,19 @@
+Xibelly Eliseth Mosquera Escobar 
+
+Respuestas punto12 -> secuencias_operaciones:
+ 
+Cual es codigo tarda mas?
+
+CASO 1)
+
+for i=1,length
+a[i] = b[i] * c
+
+En el segundo caso
+
+CASO 2)
+for k=1,nvectors
+for i=1,length
+a[i] = b[i] * c[i]
+
+R:/ En el primer caso tenemos un loop donde la varible c se mantiene en registro, ya que su valor no cambia con el paso de cada iteracion. En el segundo caso pese a que el valor de c[i] es el mismo para cada iteracion, esto es, se mantiene en registro, al haber dos loops ocurre que este ultimo calculo es mas costoso que el anterior.
