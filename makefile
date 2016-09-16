@@ -70,7 +70,20 @@ secuencia_operaciones:
 	$(CC) $(CFLAGS) $@.c -o $@.o
 	$(CC) $@.o $(LFLAGS)  -lm -o  $@.x
 
+secuencia_operaciones_float:
+	echo Estoy compilando $@.c
+	$(CC) $(CFLAGS) $@.c -o $@.o
+	$(CC) $@.o $(LFLAGS)  -lm -o  $@.x
 
+secuencia_operaciones_double:
+	echo Estoy compilando $@.c
+	$(CC) $(CFLAGS) $@.c -o $@.o
+	$(CC) $@.o $(LFLAGS)  -lm -o  $@.x
+
+secuencia_operaciones_ldouble:
+	echo Estoy compilando $@.c
+	$(CC) $(CFLAGS) $@.c -o $@.o
+	$(CC) $@.o $(LFLAGS)  -lm -o  $@.x
 
 debug: 
 	echo Estoy compilando para debugear $@.c
