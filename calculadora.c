@@ -85,6 +85,15 @@ int main(int argc, char **argv){
 
   char *DIVISION = "division";
   
+  printf("%d\n",argc);
+
+  if(argc != 4)
+    {
+      printf("ERROR--> use as:\n");
+      printf("%s termino1 operador termino2\n",argv[0]);
+      exit(0);  
+    }
+  
 
   term1   = atof(argv[1]);
   
