@@ -31,16 +31,6 @@ c) Que aprendió sobre la precedencia de los operadores en este ejemplo?
 
  */
 
-/*
- Respuestas:
- 
- a) Cual es la implementación correcta?
- 
- La implementacion correcta es la ultima
-
-.......continuar
-*/
-
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -101,9 +91,18 @@ int main(int argc, char **argv){
 
   double angulo, radianes, a, b;
   
+  printf("%d\n",argc);
+
+  if(argc != 4)
+    {
+      printf("ERROR--> use as:\n");
+      printf("%s angulo a b\n",argv[0]);
+      exit(0);  
+}
+  
   angulo   = atof(argv[1]);
   radianes = angulo*pi/180.0;
-
+  
   a        = atof(argv[2]);
   b        = atof(argv[3]);
 
