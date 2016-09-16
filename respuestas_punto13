@@ -1,0 +1,39 @@
+Xibelly Eliseth Mosquera Escobar 
+
+Respuestas punto13 -> secuencias_operaciones:
+ 
+Puede notar alguna diferencia en el tiempo de ejecución del anterior programa sise corre en int, float, double y long double precisión?
+
+R:/ Corriendo el mismo programa pero cambiando el formato : int, float, double y long double, obtenemos lo siguiente:
+
+Dado el siguinete conjunto de parametros
+
+length    = 10
+
+nvectors  = 10
+
+caso a) int 
+
+timepo ejecucion caso 1 -> 0.2
+
+timepo ejecucion caso 2 -> 1.0
+
+caso b) float 
+
+timepo ejecucion caso 1 -> 0.3
+
+timepo ejecucion caso 2 -> 1.0
+
+caso c) double 
+
+timepo ejecucion caso 1 -> 0.2
+
+timepo ejecucion caso 2 -> 2.0
+
+caso d) long double 
+
+timepo ejecucion caso 1 -> 0.3
+
+timepo ejecucion caso 2 -> 2257.10
+
+En conclusion podemos decir que a mayor presicion mayor tiempo de ejecucion
