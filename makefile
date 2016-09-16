@@ -65,6 +65,11 @@ optimizacion_registros:
 	$(CC) $(CFLAGS) $@.c -o $@.o
 	$(CC) $@.o $(LFLAGS)  -lm -o  $@.x
 
+secuencia_operaciones:
+	echo Estoy compilando $@.c
+	$(CC) $(CFLAGS) $@.c -o $@.o
+	$(CC) $@.o $(LFLAGS)  -lm -o  $@.x
+
 
 
 debug: 
