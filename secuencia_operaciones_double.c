@@ -1,34 +1,24 @@
 /* Xibelly Eliseth Mosquera Escobar
 
- 13) Punto 12 en double
+13)Problema 12 pero en formato double 
 
-Punto 12)
-
-Se tiene la siguiente secuencia de operaciones.
-
+12) Se tiene la siguiente secuencia de operaciones.
 En el primer caso 
  for i=1,length
    a[i] = b[i] * c
-
 En el segundo caso
  for k=1,nvectors
    for i=1,length
        a[i] = b[i] * c[i]
 Donde todos los valores de c[i] tienen el mismo valor. Cual código tarda mas?
-
  */
 
 /*
 Analisis y diseño
-
 Para resolver nuestro problema vamos a diseñar un codigo que nos permita visualizar cual de ambos caso es el que menos tarda, para ello necesitamos:
-
 -recivir el valor de lenght y de nvector, para ello los resiviremos por linea de comandos
-
 -hacer uso de la funcion clock() para calcular el tiempo de ejecucion
-
 -imprimir en pantalla el tiempo de ejecucion en cada caso
-
 */
 
 #include<stdio.h>
@@ -37,66 +27,86 @@ Para resolver nuestro problema vamos a diseñar un codigo que nos permita visual
 #include<time.h>
 
 //////////////////////Variables Globales/////////////////////
-double *a, *b;
-
+clock_t tini, tend, tacum;
+double cpu_time_used;
 
 ///////////////////////Funciones///////////////////////////
 caso1(int L)
 {
   int i;
-  double tini, tend, tacum;
-  double c;
-
+  double c, *a, *b;
+  
   c = 1.0;
+
+  a = (double *) malloc(L *sizeof(double));
+  b = (double *) malloc(L *sizeof(double));
+
+  for(i=0; i<L; i++)
+    {
+      b[i] = i*1.0;
+      
+    }
   
   tini = clock();
   for(i=0; i<L; i++)
     {
       a[i] = b[i] * c;
+      
     }
   tend = clock();
-  tacum += (tend-tini)/L;
   
-  printf("tiempo caso1: %lf\n",tacum);
+  cpu_time_used = ((double) (tend - tini)) / CLOCKS_PER_SEC;
   
+  printf("tiempo CPU caso1: %g\n",cpu_time_used);
+
+  return 0;
 }  
 
 caso2(int L, int V)
 {
-  double tini, tend, tacum;
   int i, j;
-  double *c;
+  double a[L][V], b[L][V];
+  double c[V];
 
-  c = (double *) malloc(V *sizeof(double));
+  printf("bien\n");
 
   for(j=0; j<V; j++)
     {
-      tini = clock();
+      c[j]    = 1.0;
+           
       for(i=0; i<L; i++)
 	{
-	  c[i] = 1.0;
-	  a[i] = b[i] * c[i];
+	  b[i][j] = i*1.0;
+	  
 	}
-   
+    }
+     
+  tini = clock();
+  for(j=0; j<V; j++)
+    {
+           
+      for(i=0; i<L; i++)
+	{
+	  a[i][j] = b[i][j] * c[j];
+	  
+	}
+      
       tend = clock();
-      tacum += (tend-tini)/V;
-  
+      
+      cpu_time_used = ((double) (tend - tini)) / CLOCKS_PER_SEC;
       
     }
-  printf("tiempo caso2: %lf\n",tacum);
-
+  printf("tiempo CPU caso2: %g\n",cpu_time_used);
+  
+  return 0;
    
 }  
-
-
-///////////////////////////////////////////////////////////////
 
 
 /////////////////////////Programa Principal////////////////////
 int main(int argc, char **argv){
 
-  int length, nvectors;
- 
+  int length, nvectors, i;
 
   printf("%d\n",argc);
 
@@ -111,10 +121,6 @@ int main(int argc, char **argv){
   nvectors        = atoi(argv[2]);
   
   printf("%d %d\n", length, nvectors);
-  
-  a = (double *) malloc(length *sizeof(double));
-  
-  b = (double *) malloc(length *sizeof(double));
 
   caso1(length);
 
