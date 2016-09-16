@@ -43,9 +43,11 @@ Para resolver nuestro problema necesitamos:
 ///////////////////////Funciones/////////////////////////////
 funcion1(double alpha, int Ntot, double x, double y)
 {
-  double t1, t2, tini, tend, tacum;
   int i,j;
-
+  double t1, t2;
+  clock_t tini, tend, tacum;
+  double cpu_time_used;
+  
   FILE *pf = NULL;
 
   pf = fopen("iteraciones_modo1.dat","w");
@@ -60,9 +62,10 @@ funcion1(double alpha, int Ntot, double x, double y)
 	  
 	}
       tend = clock();
-      tacum += (tend-tini)/Ntot;
+      //tacum += (tend-tini)/Ntot;
+      cpu_time_used = ((double) (tend - tini)) / CLOCKS_PER_SEC;
       
-      fprintf(pf,"%d %16.8lf\n", j, tacum);
+      fprintf(pf,"%d %16.8lf\n", j, cpu_time_used);
    
     }
      
@@ -72,8 +75,10 @@ funcion1(double alpha, int Ntot, double x, double y)
 
 funcion2(double alpha, int Ntot, double x, double y)
 {
-  double t1, t2, s, c, tini, tend, tacum;
+  double t1, t2, s, c;
   int i,j;
+  clock_t tini, tend, tacum;
+  double cpu_time_used;
 
   FILE *pf = NULL;
 
@@ -92,9 +97,9 @@ funcion2(double alpha, int Ntot, double x, double y)
 	  
 	}
       tend = clock();
-      tacum += (tend-tini)/Ntot;
-      
-      fprintf(pf,"%d %16.8lf\n", j, tacum);
+      //tacum += (tend-tini)/Ntot;
+      cpu_time_used = ((double) (tend - tini)) / CLOCKS_PER_SEC;
+      fprintf(pf,"%d %16.8lf\n", j, cpu_time_used);
     }
   fclose(pf);
 }  
