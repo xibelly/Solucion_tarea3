@@ -38,6 +38,15 @@ int main(int argc, char **argv){
   int N,i;
   double angulo, numerador, term, denominador, suma, seno_x, radianes;
   
+   printf("%d\n",argc);
+
+  if(argc != 3)
+    {
+      printf("ERROR--> use as:\n");
+      printf("%s angulo #iteraciones\n",argv[0]);
+      exit(0);  
+    }
+  
   angulo   = atof(argv[1]);
   radianes = angulo*pi/180.0;
   N        = atoi(argv[2]);
