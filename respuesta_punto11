@@ -1,0 +1,8 @@
+Xibelly Eliseth Mosquera Escobar 
+
+Respuestas punto11:
+
+Haga una gráfica de tiempo de ejecución como función del numero de iteraciones y úsela para concluir para cuantas iteraciones se vuelve importante considerar la optimización mencionada.
+
+R:/
+Apartir de las tablas de datos y de las graficas, podemos concluir que para un numero de 1X10^{7} se vuelve importante tener en cuenta la optimizacion, ya que para el modo1, que es sin optimización tarda 2.4 seg más que con optimización, que tarda 0.01 seg. 
