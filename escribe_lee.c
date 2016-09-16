@@ -88,6 +88,16 @@ int main(int argc, char **argv){
 
   Fx = (double *) malloc(n *sizeof(double));
 
+  printf("%d\n",argc);
+
+  if(argc != 2)
+    {
+      printf("ERROR--> use as:\n");
+      printf("%s dx\n",argv[0]);
+      exit(0);  
+    	
+    }
+    
   dx = atof(argv[1]);
   
   fdex(dx);
