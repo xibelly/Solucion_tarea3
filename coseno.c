@@ -31,6 +31,13 @@ int main(int argc, char **argv){
   int N,i;
   double angulo, term, numerador, denominador, suma,coseno_x, radianes;
   
+  if(argc != 3)
+    {
+      printf("ERROR--> use as:\n");
+      printf("%s angulo #iteraciones\n",argv[0]);
+      exit(0);  
+    }
+  
   angulo   = atof(argv[1]);
   radianes = angulo*pi/180.0;
   N        = atoi(argv[2]);
@@ -43,7 +50,7 @@ int main(int argc, char **argv){
       
       numerador    = pow(-1,i) * pow(radianes,term);
 
-      denominador  = factorial(term);
+      denominador  = factorial(term); //Se llama la funcion factorial
              
       coseno_x       = numerador / denominador; 
 
