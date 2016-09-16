@@ -37,11 +37,16 @@ caso1(int L)
 
   a = (int *) malloc(L *sizeof(int));
   b = (int *) malloc(L *sizeof(int));
+
+  for(i=0; i<L; i++)
+    {
+      b[i] = i;
+      
+    }
   
   tini = clock();
   for(i=0; i<L; i++)
     {
-      b[i] = i*1;
       a[i] = b[i] * c;
       
     }
@@ -57,18 +62,27 @@ caso1(int L)
 caso2(int L, int V)
 {
   int i, j;
-  int aa[L][V], bb[L][V];
-  int cc[V];
-  
+  int a[L][V], b[L][V];
+  int c[V];
+
   for(j=0; j<V; j++)
     {
-      cc[j]    = 1;
-      tini     = clock();
-      
+      c[j]    = 1;
+           
       for(i=0; i<L; i++)
 	{
-	  bb[i][j] = i*1;
-	  aa[i][j] = bb[i][j] * cc[j];
+	  b[i][j] = i;
+	  
+	}
+    }
+
+  tini = clock();
+  for(j=0; j<V; j++)
+    {
+           
+      for(i=0; i<L; i++)
+	{
+	  a[i][j] = b[i][j] * c[j];
 	  
 	}
       
@@ -88,7 +102,6 @@ caso2(int L, int V)
 int main(int argc, char **argv){
 
   int length, nvectors, i;
-  int  **aa, **bb, *cc;
 
   printf("%d\n",argc);
 
