@@ -30,6 +30,13 @@ int main(int argc, char **argv)
 {
   double x;
 
+  if(argc != 2)
+    {
+      printf("ERROR--> use as:\n");
+      printf("%s numero x\n",argv[0]);
+      exit(0);  
+    }
+
   x = atof(argv[1]);
 
   factorial(x);
