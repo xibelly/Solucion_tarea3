@@ -86,6 +86,15 @@ int main(int argc, char **argv){
 
   int N;
   
+  printf("%d\n",argc);
+
+  if(argc != 2)
+    {
+      printf("ERROR--> use as:\n");
+      printf("%s terminos_expansion \n",argv[0]);
+      exit(0);  
+}
+  
   N  = atoi(argv[1]);
 
   pi1(N);
