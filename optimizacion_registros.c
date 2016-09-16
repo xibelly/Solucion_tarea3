@@ -37,8 +37,10 @@ Para resolver nuestro problema necesitamos:
 #include<math.h>
 #include<time.h>
 
+///////////////////////Variables globales/////////////////////
 #define pi 3.141592
 
+///////////////////////Funciones/////////////////////////////
 funcion1(double alpha, int Ntot, double x, double y)
 {
   double t1, t2, tini, tend, tacum;
@@ -97,7 +99,7 @@ funcion2(double alpha, int Ntot, double x, double y)
   fclose(pf);
 }  
 
-
+//////////////////////////////////Programa principal/////////////////////
 int main(int argc, char **argv){
 
   int N,i;
