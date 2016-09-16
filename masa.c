@@ -80,6 +80,15 @@ int main(int argc, char **argv){
   double dv;    //300000
   int N;        //15
   
+  printf("%d\n",argc);
+
+  if(argc != 3)
+    {
+      printf("ERROR--> use as:\n");
+      printf("%s dv iteraciones\n",argv[0]);
+      exit(0);  
+  }
+  
   dv = atof(argv[1]);
 
   N  = atoi(argv[2]);
