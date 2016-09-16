@@ -30,6 +30,15 @@ int main(int argc, char **argv){
 
   int i, Xmax, result;
   
+  printf("%d\n",argc);
+
+  if(argc != 2)
+    {
+      printf("ERROR--> use as:\n");
+      printf("%s numero\n",argv[0]);
+      exit(0);  
+    }
+  
   Xmax   = atoi(argv[1]);
   
   
