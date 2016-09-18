@@ -29,26 +29,26 @@ Para resolver nuestro problema vamos a diseñar un codigo que nos permita visual
 //////////////////////Variables Globales/////////////////////
 clock_t tini, tend, tacum;
 double cpu_time_used;
-
+int length, nvectors;
 ///////////////////////Funciones///////////////////////////
-caso1(int L)
+caso1()
 {
   int i;
   double c, *a, *b;
   
   c = 1.0;
 
-  a = (double *) malloc(L *sizeof(double));
-  b = (double *) malloc(L *sizeof(double));
+  a = (double *) malloc(length *sizeof(double));
+  b = (double *) malloc(length *sizeof(double));
 
-  for(i=0; i<L; i++)
+  for(i=0; i<length; i++)
     {
       b[i] = i*1.0;
       
     }
   
   tini = clock();
-  for(i=0; i<L; i++)
+  for(i=0; i<length; i++)
     {
       a[i] = b[i] * c;
       
@@ -62,32 +62,19 @@ caso1(int L)
   return 0;
 }  
 
-caso2(int L, int V)
+caso2(double B[length][nvectors], double C[nvectors])
 {
   int i, j;
-  double a[L][V], b[L][V];
-  double c[V];
+  
+  double A[length][nvectors];
 
-  printf("bien\n");
-
-  for(j=0; j<V; j++)
-    {
-      c[j]    = 1.0;
-           
-      for(i=0; i<L; i++)
-	{
-	  b[i][j] = i*1.0;
-	  
-	}
-    }
-     
   tini = clock();
-  for(j=0; j<V; j++)
+  for(j=0; j<nvectors; j++)
     {
            
-      for(i=0; i<L; i++)
+      for(i=0; i<length; i++)
 	{
-	  a[i][j] = b[i][j] * c[j];
+	  A[i][j] = B[i][j] * C[j];
 	  
 	}
       
@@ -100,14 +87,15 @@ caso2(int L, int V)
   
   return 0;
    
-}  
+}
 
 
 /////////////////////////Programa Principal////////////////////
 int main(int argc, char **argv){
 
-  int length, nvectors, i;
-
+  
+  int i, j;
+  
   printf("%d\n",argc);
 
   if(argc != 3)
@@ -122,10 +110,30 @@ int main(int argc, char **argv){
   
   printf("%d %d\n", length, nvectors);
 
-  caso1(length);
+  /////////////////////////////////////
 
-  caso2(length, nvectors);
-  
+  caso1();
+
+  /////////////////////////////////////
+  double C[nvectors];
+  double B[length][nvectors];
+
+   for(j=0; j<nvectors; j++)
+    {
+      C[j]    = 1.0;
+      
+      for(i=0; i<length; i++)
+	{
+	  B[i][j] = i*1.0;
+	  
+	}
+    }
+
+   ///////////////////////////////////
+
+  caso2(B, C);
+
+  ///////////////////////////////////
   return 0;
   
 }
