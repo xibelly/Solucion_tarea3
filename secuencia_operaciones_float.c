@@ -1,6 +1,6 @@
 /* Xibelly Eliseth Mosquera Escobar
 
-13)Problema 12 pero en formato double 
+13)Problema 12 pero en formato float
 
 12) Se tiene la siguiente secuencia de operaciones.
 En el primer caso 
