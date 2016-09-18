@@ -8,32 +8,33 @@ R:/ Corriendo el mismo programa pero cambiando el formato : int, float, double y
 
 Dado el siguinete conjunto de parametros
 
-length    = 10
+length    = 100
 
-nvectors  = 10
+nvectors  = 100
 
 caso a) int 
 
-timepo ejecucion caso 1 -> 0.2
+timepo ejecucion caso 1 -> 5e-06
 
-timepo ejecucion caso 2 -> 1.0
+timepo ejecucion caso 2 -> 0.000566
 
 caso b) float 
 
-timepo ejecucion caso 1 -> 0.3
+timepo ejecucion caso 1 -> 5e-06
 
-timepo ejecucion caso 2 -> 1.0
+timepo ejecucion caso 2 -> 0.0036
 
 caso c) double 
 
-timepo ejecucion caso 1 -> 0.2
+timepo ejecucion caso 1 -> 4e-06
 
-timepo ejecucion caso 2 -> 2.0
+timepo ejecucion caso 2 -> 0.00041
 
 caso d) long double 
 
-timepo ejecucion caso 1 -> 0.3
+timepo ejecucion caso 1 -> 5e-06
 
-timepo ejecucion caso 2 -> 2257.10
+timepo ejecucion caso 2 -> 0.000894
 
-En conclusion podemos decir que a mayor presicion mayor tiempo de ejecucion
+En conclusion podemos decir que el formato más conveniente para trabajar es el formato double ya que en comparación con los demás
+es el que menos tarda.
