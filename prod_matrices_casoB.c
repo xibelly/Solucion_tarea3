@@ -45,10 +45,33 @@ casoB()
 {
   
   int i, j, k;
-  int a[N][N];
-  int b[N][N];
-  int c[N][N];
- 
+  double a[N][N];
+  double b[N][N];
+  double c[N][N];
+
+  FILE *pf =NULL;
+
+  pf = fopen("prod_matrices_casoB.dat","w");
+   
+  for(i=0; i<N; i++)
+    {
+      for(k=0; k<N; k++)
+	{
+	  a[i][k] = 1.0;
+	  
+	}
+    }
+
+  for(k=0; k<N; k++)
+    {
+      for(j=0; j<N; j++)
+	{
+	  b[k][j] = j*1.0;
+	  
+	}
+    }
+
+
   tini = clock();
 
   for(i=0; i<N; i++)
@@ -60,6 +83,7 @@ casoB()
 	  for(j=0; j<N; j++)
 	    {
 	      c[i][j] += a[i][k] * b[k][j];
+	      fprintf(pf,"%lf\n",c[i][j]);
 	      
 	    }
 	}

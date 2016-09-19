@@ -45,12 +45,34 @@ casoA()
 {
   
   int i, j, k;
-  int a[N][N];
-  int b[N][N];
-  int c[N][N];
+  double a[N][N];
+  double b[N][N];
+  double c[N][N];
  
-  tini = clock();
+  FILE *pf =NULL;
 
+  pf = fopen("prod_matrices_casoA.dat","w");
+   
+  for(k=0; k<N; k++)
+    {
+      for(i=0; i<N; i++)
+	{
+	  a[i][k] = 1.0;
+	  
+	}
+    }
+
+  for(k=0; k<N; k++)
+    {
+      for(j=0; j<N; j++)
+	{
+	  b[k][j] = j*1.0;
+	  
+	}
+    }
+
+  tini = clock();
+  
   for(k=0; k<N; k++)
     {
   
@@ -60,7 +82,7 @@ casoA()
 	  for(i=0; i<N; i++)
 	    {
 	      c[i][j] += a[i][k] * b[k][j];
-	      
+	      fprintf(pf,"%lf\n",c[i][j]);
 	    }
 	}
       
@@ -71,6 +93,8 @@ casoA()
     }
   printf("tiempo CPU casoA: %g\n",cpu_time_used);
 
+  fclose(pf);
+  
   return 0;
 }  
 

@@ -41,14 +41,37 @@ clock_t tini, tend, tacum;
 double cpu_time_used;
 int N;
 ///////////////////////Funciones///////////////////////////
-casoC()
+casoB()
 {
   
   int i, j, k;
-  int a[N][N];
-  int b[N][N];
-  int c[N][N];
- 
+  double a[N][N];
+  double b[N][N];
+  double c[N][N];
+
+  FILE *pf =NULL;
+
+  pf = fopen("prod_matrices_casoC.dat","w");
+   
+  for(k=0; k<N; k++)
+    {
+      for(i=0; i<N; i++)
+	{
+	  a[i][k] = 1.0;
+	  
+	}
+    }
+
+  for(k=0; k<N; k++)
+    {
+      for(j=0; j<N; j++)
+	{
+	  b[k][j] = j*1.0;
+	  
+	}
+    }
+
+
   tini = clock();
 
   for(k=0; k<N; k++)
@@ -60,6 +83,7 @@ casoC()
 	  for(j=0; j<N; j++)
 	    {
 	      c[i][j] += a[i][k] * b[k][j];
+	      fprintf(pf,"%lf\n",c[i][j]);
 	      
 	    }
 	}
@@ -69,7 +93,7 @@ casoC()
       cpu_time_used = ((double) (tend - tini)) / CLOCKS_PER_SEC;
       
     }
-  printf("tiempo CPU casoC: %g\n",cpu_time_used);
+  printf("tiempo CPU casoB: %g\n",cpu_time_used);
 
   return 0;
 }  
@@ -93,8 +117,8 @@ int main(int argc, char **argv){
   
   printf("%d\n", N);
 
-  casoC();
-
+  casoB();
+  
   return 0;
   
 }
