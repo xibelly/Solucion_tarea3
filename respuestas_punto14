@@ -1,0 +1,19 @@
+Xibelly Eliseth Mosquera Escobar 
+
+Respuestas punto14 -> Escriba un programa que implemente la realización de un loop como el que se presenta a 
+continuación
+for (loop=0; loop<10; loop++) {
+    for (i=0; i<N; i++) {
+    ... = ... x[i] ...
+    }
+   }
+y luego el mismo código pero usando el segundo orden
+for (i=0; i<N; i++) {
+for (loop=0; loop<10; loop++) {
+... = ... x[i] ...
+}
+}
+Cual ejecución demora mas? Por que?
+
+R:/ Indiferente del valor de N -del numero de iteraciones- podemos concluir que en el primer caso, para el loop externo el vector x[i] cambia iterativamente, de tal modo que no se mantiene en registro como ocurre en el caso2, en el cual para un valor dado de i se tiene un valor de x[i] que se mantiene en registro mientras avanza el loop interno.
+
