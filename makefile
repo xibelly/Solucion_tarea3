@@ -85,6 +85,22 @@ secuencia_operaciones_ldouble:
 	$(CC) $(CFLAGS) $@.c -o $@.o
 	$(CC) $@.o $(LFLAGS)  -lm -o  $@.x
 
+prod_matrices_casoA:
+	echo Estoy compilando $@.c
+	$(CC) $(CFLAGS) $@.c -o $@.o
+	$(CC) $@.o $(LFLAGS)  -lm -o  $@.x
+
+prod_matrices_casoB:
+	echo Estoy compilando $@.c
+	$(CC) $(CFLAGS) $@.c -o $@.o
+	$(CC) $@.o $(LFLAGS)  -lm -o  $@.x
+
+prod_matrices_casoC:
+	echo Estoy compilando $@.c
+	$(CC) $(CFLAGS) $@.c -o $@.o
+	$(CC) $@.o $(LFLAGS)  -lm -o  $@.x
+
+
 debug: 
 	echo Estoy compilando para debugear $@.c
 	$(CC) $(CFLAGSDEBUG) $@.c -o $@.o
