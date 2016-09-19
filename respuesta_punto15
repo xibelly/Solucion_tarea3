@@ -1,0 +1,40 @@
+Xibelly Eliseth Mosquera Escobar 
+
+Respuestas punto15:
+
+Escriba tres programas para calcular la multiplicación de dos matrices usando como algoritmos 
+centrales las siguientes formas
+a) Caso a
+for i=1..n
+for j=1..n
+for k=1..nc[i,j] += a[i,k]*b[k,j]
+b) Caso b
+for i=1..n
+for k=1..n
+for j=1..n
+c[i,j] += a[i,k]*b[k,j]
+c) Caso c
+for k=1..n:
+for i=1..n:
+for j=1..n:
+c[i,j] += a[i,k]*b[k,j]
+Cual método funciona mas rápido? Cambian los resultados con cada implementación?
+
+R:/ Para N=100, a[i][k]=1.0 y b[k][j]= 1.0*j analicemos cada caso
+
+Caso A)
+
+timepo de ejecucion : 0.001677
+
+Caso B)
+
+timepo de ejecucion : 0.001862
+
+Caso C)
+
+timepo de ejecucion : 1.85811
+
+Podmeos concluir que la implentacion del caso A tarda menos que las demas debido a que b[k][j] se mantiene en registro cosa que no ocurre en los demas casos.
+
+Ocurre que tambien hay cambios en los resultados en cada implementacion, debido a la manera en que se accede a los datos en la matrices.
+
