@@ -15,5 +15,7 @@ for (loop=0; loop<10; loop++) {
 }
 Cual ejecución demora mas? Por que?
 
-R:/ Indiferente del valor de N -del numero de iteraciones- podemos concluir que en el primer caso, para el loop externo el vector x[i] cambia iterativamente, de tal modo que no se mantiene en registro como ocurre en el caso2, en el cual para un valor dado de i se tiene un valor de x[i] que se mantiene en registro mientras avanza el loop interno.
+R:/ Indiferente del valor de N -del numero de iteraciones- podemos concluir que en el primer caso, 
+para el loop externo el vector x[i] cambia iterativamente, de tal modo que no se mantiene en cache como ocurre en el caso2,
+en el cual para un valor dado de i se tiene un valor de x[i] que es usado 10 veces mientras avanza el loop interno.
 
